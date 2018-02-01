@@ -1,0 +1,238 @@
+<head>
+
+<style type="text/css">
+
+		h1 {
+			font-family: Verdana;
+			text-align : center;
+			background : grey;
+			color : white;
+			
+			
+		}
+		body
+		{
+			font-family: "Gill Sans", sans-serif;
+		}
+		table {
+			margin: 50px 0 0 10px;
+			border :inset 10px ;
+
+
+		}
+		input {
+			text-align : center;
+		}
+		tr {
+
+			text-align : center;
+		}
+		.submit
+		{
+			margin:20px 0px 0px 630px;
+		}
+		.addition
+		{
+			margin: 20px 0 0 10px;
+		}
+		th
+		{
+			text-transform: uppercase;
+		}
+		
+
+		
+</style>
+
+
+</head>
+<body>
+	<h1>Menu KikKuk</h1>
+	<center><table border="5">
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th colspan="3">Quantity</th>
+		<th>Subtotal</th>
+	</tr>
+	<tr>
+		<td>Mineral Water</td>
+		<td>Rp 10.000</td>
+		<td><button onclick="kurang1()">-</button></td>
+		<td><input id="satu" type="text" value="0"></input></td>
+		<td><button onclick="tambah1()">+</button></td>
+		<td><input id="satu1" type="text" value="0"></input></td>
+	</tr>
+	<tr>
+		<td>Softdrinks</td>
+		<td>Rp 15.000</td>
+		<td><button onclick="kurang2()">-</button></td>
+		<td><input id="dua" type="text" value="0"></input></td>
+		<td><button onclick="tambah2()">+</button></td>
+		<td><input id="dua2" type="text" value="0"></input></td>
+	</tr>
+	<tr>
+		<td>Chicken Steak</td>
+		<td>Rp 30.000</td>
+		<td><button onclick="kurang3()">-</button></td>
+		<td><input id="tiga" type="text" value="0"></input></td>
+		<td><button onclick="tambah3()">+</button></td>
+		<td><input id="tiga3" type="text" value="0"></input></td>
+	</tr>
+	<tr>
+		<td>Beef Steak</td>
+		<td>Rp 45.000</td>
+		<td><button onclick="kurang4()">-</button></td>
+		<td><input id="empat" type="text" value="0"></input></td>
+		<td><button onclick="tambah4()">+</button></td>
+		<td><input id="empat4" type="text" value="0"></input></td>
+	</tr>
+	<tr>
+		<td colspan="2">Total</td>
+		<td colspan="5"><input id="totalaja" type="text" value="0"></input></td>
+	</tr>
+	</table></center>
+	<button class="submit" onclick="invoice11()">Submit</button> <button class="addition" onclick="invoice12()">Addition</button>
+	<br>
+	<br>
+	<center>
+	<div id="aa"></div>
+	<div id="aa1"></div>
+	<div id="bb1"></div>
+	<div id="cc1"></div>
+	<div id="dd1"></div>
+	<div id="ee1"></div>
+	<br>
+	<br>
+	<div id="ab"></div>
+	<div id="aa2"></div>
+	<div id="bb2"></div>
+	<div id="cc2"></div>
+	<div id="dd2"></div>
+	<div id="ee2"></div>
+	</center>
+	
+	
+	
+	
+	<script>
+	var x1=0,x2=0,x3=0,x4=0;
+			function tambah1()
+			
+			{
+					x1 = x1 + 10000;
+					document.getElementById('satu1').value = x1;
+					document.getElementById('satu').value = x1/10000;
+					total()
+			}
+			function kurang1()
+			{
+					
+					if (x1>0)
+					{
+						x1 = x1 - 10000;
+					document.getElementById('satu1').value = x1;
+					document.getElementById('satu').value = x1/10000;
+					}
+					else
+					{
+						document.getElementById('satu').value = 0;
+						document.getElementById('satu1').value =0;
+					}
+					total()
+			}
+			
+			function tambah2()
+			{
+					x2 = x2 + 15000;
+					document.getElementById('dua2').value = x2;
+					document.getElementById('dua').value = x2/15000;
+					total()
+			}
+			function kurang2()
+			{
+					if (x2>0)
+					{
+						x2 = x2 - 15000;
+					document.getElementById('dua2').value = x2;
+					document.getElementById('dua').value = x2/15000;
+					}
+					else
+					{
+						document.getElementById('dua').value = 0;
+						document.getElementById('dua2').value =0;
+					}
+					total()
+			}
+			function tambah3()
+			{
+					x3 = x3 + 30000;
+					document.getElementById('tiga3').value = x3;
+					document.getElementById('tiga').value = x3/30000;
+					total()
+			}
+			function kurang3()
+			{
+					if (x3>0)
+					{
+						x3 = x3 - 30000;
+					document.getElementById('tiga3').value = x3;
+					document.getElementById('tiga').value = x3/30000;
+					}
+					else
+					{
+						document.getElementById('tiga').value = 0;
+						document.getElementById('tiga3').value =0;
+					}
+					total()
+			}
+			function tambah4()
+			{
+					x4 = x4 + 45000;
+					document.getElementById('empat4').value = x4;
+					document.getElementById('empat').value = x4/45000;
+					total()
+			}
+			function kurang4()
+			{
+					if (x4>0)
+					{
+						x4 = x4 - 45000;
+					document.getElementById('empat4').value = x4;
+					document.getElementById('empat').value = x4/45000;
+					}
+					else
+					{
+						document.getElementById('empat').value = 0;
+						document.getElementById('empat4').value =0;
+					}
+					total()
+			}
+			
+			function total()
+			{
+			totalitas = x1+x2+x3+x4;
+				document.getElementById('totalaja').value = totalitas;
+			}
+			
+			function invoice11()
+			{
+				document.getElementById('aa').innerHTML = "~Invoice~";
+				document.getElementById("aa1").innerHTML = "Mineral Water (" + x1/10000 +")";
+				document.getElementById("bb1").innerHTML = "Softdrinks (" + x2/15000 +")";
+				document.getElementById("cc1").innerHTML = "Chicken Steak (" + x3/30000 +")";
+				document.getElementById("dd1").innerHTML = "Beef Steak (" + x4/45000 +")";
+				document.getElementById("ee1").innerHTML = "Total = Rp " + totalitas;
+			}
+			function invoice12()
+			{
+				document.getElementById('ab').innerHTML = "~Addition Invoice~";
+				document.getElementById("aa2").innerHTML = "Mineral Water (" + x1/10000 +")";
+				document.getElementById("bb2").innerHTML = "Softdrinks (" + x2/15000 +")";
+				document.getElementById("cc2").innerHTML = "Chicken Steak (" + x3/30000 +")";
+				document.getElementById("dd2").innerHTML = "Beef Steak (" + x4/45000 +")";
+				document.getElementById("ee2").innerHTML = "Total = Rp " + totalitas;
+			}
+			
+	</script>
+</body>
